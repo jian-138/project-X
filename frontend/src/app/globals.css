@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void-950: #0a0a0f;
+  --color-void-900: #0f0f1a;
+  --color-void-800: #1a1a2e;
+  --color-void-700: #2a2a4a;
+  --color-chrono-gold: #c9a96e;
+  --color-chrono-copper: #b87333;
+  --color-chrono-blue: #4a8fcc;
+  --color-chrono-purple: #7b4fcc;
+  --color-chrono-green: #5a9e6f;
+}
+
+body {
+  background: var(--color-void-950);
+  color: #e0e0e0;
+  font-family: var(--font-inter, system-ui, sans-serif);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-void-700);
+  border-radius: 3px;
+}
+
+/* Glow utility */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(201, 169, 110, 0.3);
+}
+.glow-text {
+  text-shadow: 0 0 10px rgba(201, 169, 110, 0.5);
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.4);
+  }
+}
