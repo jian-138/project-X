@@ -1,4 +1,13 @@
-from .task import TaskStatus, TaskPhase, tasks_store
-from .script import VideoScript, Scene
+from .conversation import ConversationMessage, ConversationState
+from .script import Scene, VideoScript
+from .task import TaskPhase, TaskStatus, tasks_store
 
-__all__ = ["TaskStatus", "TaskPhase", "tasks_store", "VideoScript", "Scene"]
+__all__ = [
+    "ConversationMessage",
+    "ConversationState",
+    "Scene",
+    "TaskPhase",
+    "TaskStatus",
+    "VideoScript",
+    "tasks_store",
+]

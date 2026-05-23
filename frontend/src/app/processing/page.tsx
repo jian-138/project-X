@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ProgressBar } from "@/components/progress/ProgressBar";
 import { getTaskStatus } from "@/lib/api";
 import type { TaskPhase } from "@/lib/types";
 
-export default function ProcessingPage() {
+function ProcessingContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const taskId = searchParams.get("task_id");
@@ -85,5 +85,13 @@ export default function ProcessingPage() {
         ))}
       </div>
     </div>
+  );
+}
+
+export default function ProcessingPage() {
+  return (
+    <Suspense fallback={<div className="max-w-2xl mx-auto px-4 py-20 text-center text-gray-500">加载任务...</div>}>
+      <ProcessingContent />
+    </Suspense>
   );
 }

@@ -17,6 +17,8 @@ class Settings:
 
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+    OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+    OPENAI_IMAGE_MODEL: str = os.getenv("OPENAI_IMAGE_MODEL", "gpt-image-1-mini")
 
     IMAGE_GEN_API_KEY: str = os.getenv("IMAGE_GEN_API_KEY", "")
     IMAGE_GEN_API_URL: str = os.getenv("IMAGE_GEN_API_URL", "")

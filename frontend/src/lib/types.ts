@@ -14,6 +14,27 @@ export interface VideoScript {
   scenes: Scene[];
   bgm_url: string | null;
   created_at: string;
+  title?: string | null;
+  summary?: string | null;
+  story_beats?: string[];
+}
+
+export interface ConversationMessage {
+  role: string;
+  phase: string;
+  content: string;
+  created_at: string;
+}
+
+export interface ConversationState {
+  task_id: string;
+  era: string;
+  creative_brief: string;
+  status: "drafting" | "ready" | "failed";
+  messages: ConversationMessage[];
+  script: VideoScript | null;
+  updated_at: string;
+  error: string | null;
 }
 
 export type TaskPhase =
@@ -89,6 +110,11 @@ export interface UploadResponse {
 export interface ResultResponse {
   task_id: string;
   script: VideoScript;
+}
+
+export interface ConversationResponse {
+  task_id: string;
+  conversation: ConversationState;
 }
 
 export interface BgmResponse {

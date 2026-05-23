@@ -29,6 +29,11 @@ out/
 .DS_Store
 Thumbs.db
 
+# Runtime
+backend/outputs/
+backend/uploads/
+next-env.d.ts
+
 # Logs
 *.log
 npm-debug.log*

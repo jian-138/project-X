@@ -1,6 +1,6 @@
-from typing import List, Optional
+from typing import List
+
 from pydantic import BaseModel
-from datetime import datetime
 
 
 class Scene(BaseModel):
@@ -19,3 +19,6 @@ class VideoScript(BaseModel):
     scenes: List[Scene]
     bgm_url: str | None = None
     created_at: str = ""
+    title: str | None = None
+    summary: str | None = None
+    story_beats: List[str] = []
